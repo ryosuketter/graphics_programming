@@ -4,7 +4,7 @@
 let d = new Date();
 
 // フォーマット済みの文字列として出力
-console.log(formatDate(d, "-"));
+console.log(formatDate(d));
 
 /**
  * Date 型のデータをフォーマットして返す
