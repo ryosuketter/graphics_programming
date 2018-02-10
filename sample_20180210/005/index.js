@@ -17,6 +17,8 @@ server.on('request', (request, response) => {
     // レスポンスヘッダ（レスポンスの情報）を設定する
     // ヘッダには様々な情報を含ませることができるが、ここでは
     // レスポンスはプレーンテキストであることを設定している
+    // 200はリクエストが成功したことを表す
+    // コンテントタイプは、レスポンスのタイプ
     response.writeHead(200, {'Content-Type': 'text/plain'});
     // end にフォーマットした日付文字列を渡して終了
     response.end(formatDate(new Date()));
