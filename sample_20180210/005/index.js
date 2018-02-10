@@ -1,5 +1,6 @@
 
 // ポートを定数で指定しておく
+// constで宣言したものは再代入できない
 const PORT = 8888;
 
 // http モジュールでサーバを起動できる
@@ -44,4 +45,3 @@ function formatDate(date, delimiter = '/'){
     let s = date.getSeconds();   // 秒
     return y + delimiter + m + delimiter + d + ' ' + h + ':' + i + ':' + s;
 }
-
