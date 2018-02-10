@@ -11,6 +11,8 @@ let f = formatDate(d);
 // dirname は予約後
 let p = path.join(__dirname, 'out.txt');
 
+console.log(__dirname);
+
 fs.writeFile(p, f, (error) => {
     if(error){
         throw error;
