@@ -11,3 +11,4 @@ https://webgl.souhonzan.org/entry/?v=1145
   - fsモジュール
   - fsモジュールのメソッド「writeFile」
   - ES 2015から出てきたアロー関数（即時関数）（003で出てきた）
+  - ```fs``` モジュールは Node.js の標準ビルトインモジュール
