@@ -1,6 +1,7 @@
 
 // require を使ってモジュールをインポート
 // fs モジュールはファイルの入出力を行うモジュール
+// fs はファイルシステムの略
 let fs = require('fs');
 
 let d = new Date();
@@ -32,4 +33,3 @@ function formatDate(date, delimiter = '/'){
     let s = date.getSeconds();   // 秒
     return y + delimiter + m + delimiter + d + ' ' + h + ':' + i + ':' + s;
 }
-
