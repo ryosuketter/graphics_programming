@@ -8,6 +8,7 @@ let f = formatDate(d);
 // 実行中のスクリプトからの相対パスを取得
 // __dirname は実行中のスクリプトの絶対パス
 // path.join でパスを正しく連結できる
+// dirname は予約後
 let p = path.join(__dirname, 'out.txt');
 
 fs.writeFile(p, f, (error) => {
@@ -31,4 +32,3 @@ function formatDate(date, delimiter = '/'){
     let s = date.getSeconds();   // 秒
     return y + delimiter + m + delimiter + d + ' ' + h + ':' + i + ':' + s;
 }
-
