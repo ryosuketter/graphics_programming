@@ -27,6 +27,8 @@ server.on('request', (request, response) => {
         }
         // 無事にファイルを開くことができた場合は 200 ステータスを設定し
         // ファイルの中身の HTML を返す
+        // コンテントタイプ = 例えばブラウザのようなリクエスト元が
+        // レスポンスの中身が何であるかを判断する基準になる
         response.writeHead(200, {'Content-Type': 'text/html'});
         response.write(data);
         response.end();
@@ -36,4 +38,3 @@ server.on('request', (request, response) => {
 server.listen(PORT);
 console.log('server running!');
 console.log('http://localhost:' + PORT);
-
