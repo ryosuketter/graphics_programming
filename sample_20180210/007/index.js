@@ -4,7 +4,7 @@
 // やってみる
 
 const PORT       = 8888; // ポート番号
-const FIELD_SIZE = 50;   // フィールドのマス目の量（幅・高さ）
+const FIELD_SIZE = 200;   // フィールドのマス目の量（幅・高さ）
 const LOOP_COUNT = 100;  // ループする回数（多いほど高負荷・正確）
 const OFFSET_X   = -0.5; // 横位置をオフセットする量
 const OFFSET_Y   = 0.0;  // 縦位置をオフセットする量
@@ -48,6 +48,7 @@ function mandelbrot(){
     for(let y = 0; y < FIELD_SIZE; ++y){
         table[y] = [];
         for(let x = 0; x < FIELD_SIZE; ++x){
+            // XY座標から -1~1の範囲になるように計算している
             let centerX = (x / FIELD_SIZE - 0.5) * 2.0;
             let centerY = (y / FIELD_SIZE - 0.5) * 2.0;
             table[y][x] = calcSet(centerX, centerY);
@@ -91,4 +92,3 @@ function calcSet(centerX, centerY){
     }
     return LOOP_COUNT;
 }
-
