@@ -8,6 +8,10 @@ console.log(formatDate(d));
 
 /**
  * Date 型のデータをフォーマットして返す
+ * JS Doc を書く習慣をつける時は、この関数が何を意味するかをコメントしておく
+ * @param => 引数に関する情報{データ型}引数の名前（期待される引数に関する情報）
+ * @return {string} 戻り値（期待される戻り値に関する情報）
+ *
  * @param {Date} date - フォーマットする Date 型のデータ
  * @param {string} [delimiter='/'] - 年月日の区切り文字
  */
