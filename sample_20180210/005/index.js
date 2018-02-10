@@ -19,6 +19,7 @@ server.on('request', (request, response) => {
     // レスポンスはプレーンテキストであることを設定している
     // 200はリクエストが成功したことを表す
     // コンテントタイプは、レスポンスのタイプ
+
     response.writeHead(200, {'Content-Type': 'text/plain'});
     // end にフォーマットした日付文字列を渡して終了
     response.end(formatDate(new Date()));
