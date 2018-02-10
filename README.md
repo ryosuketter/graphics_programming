@@ -10,3 +10,4 @@ https://webgl.souhonzan.org/entry/?v=1145
 - Node.js ならではの処理の代表的として ファイルの入出力 があるのか
   - fsモジュール
   - fsモジュールのメソッド「writeFile」
+  - ES 2015から出てきたアロー関数（即時関数）（003で出てきた）
