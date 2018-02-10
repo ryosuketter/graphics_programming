@@ -1,5 +1,6 @@
 
 // Date インスタンスを生成
+// カッコに何も入れてない場合は現在時
 let d = new Date();
 
 // フォーマット済みの文字列として出力
@@ -19,4 +20,3 @@ function formatDate(date, delimiter = '/'){
     let s = date.getSeconds();   // 秒
     return y + delimiter + m + delimiter + d + ' ' + h + ':' + i + ':' + s;
 }
-
