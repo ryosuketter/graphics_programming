@@ -5,14 +5,18 @@
     let gui; // Gui のインスタンス用
 
     // ページのロードが完了したときに発火する load イベントを登録する
+    // windowに対して、addEventListener
     window.addEventListener('load', () => {
         // Gui インスタンスの生成
         gui = new Gui();
 
         // CanvasUtil インスタンスの生成
+        // new演算子とクラス名でインスタンスを生成
+        // let cvs = document.getElementById('canvas');
         cu = new CanvasUtil(document.getElementById('canvas'));
 
         // サイズをウィンドウに揃える
+        // サイズを揃えたい
         cu.matchSize();
 
         // 内容をクリアする

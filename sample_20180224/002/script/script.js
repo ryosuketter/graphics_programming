@@ -9,6 +9,7 @@
         cu.clear();
 
         // 様々な引数を受け取り、汎用的に使えるようにした矩形描画命令を利用
+        // 好きな幅と高さを決めることができる
         cu.fillRect(
             50,
             100,
@@ -44,9 +45,13 @@
          * @param {number} w - 矩形の幅
          * @param {number} h - 矩形の高さ
          * @param {string} [color] - 塗りつぶす色（CSS Style）
+         * []<-これは省略を許す。という意味。
          */
         fillRect(x, y, w, h, color){
             if(color != null){
+                // このカッコの中が実行されてるということは、nullとかundefinedでない証拠
+                // context.fillStyle = CSSスタイルの文字列
+                // 色の設定は個別に分かれている
                 this.ctx.fillStyle = color;
             }
             this.ctx.fillRect(x, y, w, h);

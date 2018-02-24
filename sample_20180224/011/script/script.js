@@ -34,7 +34,7 @@
         }, false);
 
         // 完了時の処理を定義してから読み込みを開始（ソースを指定）
-        img.src = 'sample.jpg';
+        img.src = 'sample2.jpg';
 
     }, false);
 

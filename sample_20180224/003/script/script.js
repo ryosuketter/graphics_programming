@@ -55,6 +55,7 @@
                 this.ctx.fillStyle = color;
             }
             this.ctx.beginPath();
+            //xy座標、半径、開始角度（ラジアン）、終了角度（ラジアン）、true=反時計回り
             this.ctx.arc(x, y, rad, 0, Math.PI * 2, false);
             this.ctx.closePath();
             this.ctx.fill();

@@ -31,12 +31,12 @@
 
         // 任意の文字列を描画する命令を利用
         cu.fillText(
-            'canvas2d fill text',
+            'ハイパーよっきょう',
             window.innerWidth / 2,
             window.innerHeight / 2,
             null,
-            'italic bold 32px sans-serif',
-            'rgba(0, 0, 0, 0.5)'
+            'italic bold 50px sans-serif',
+            'rgba(10, 0, 0, 0.5)'
         );
     }, false);
 
