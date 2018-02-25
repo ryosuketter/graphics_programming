@@ -7,7 +7,7 @@
 
     // const を使ってパラメータを定数化する
     // こうすることで一箇所を修正するだけで全体に変更を適用できるようになる
-    const CIRCLE_RADIUS = 10;                      // 円の半径
+    const CIRCLE_RADIUS = 5;                      // 円の半径
     const CIRCLE_COLOR = 'rgba(255, 0, 255, 0.8)'; // 円の塗り色
 
     window.addEventListener('load', () => {

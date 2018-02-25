@@ -11,7 +11,9 @@
         cu.clear();
 
         // 描画を開始する前に現在の時刻を取得
+        // new Date().getTime();と同じ意味
         startTime = Date.now();
+        // startTimeは描画開始直前のtimestamp
 
         // 描画命令を呼ぶ
         render();
@@ -29,9 +31,10 @@
 
         // 経過時間を X 座標に設定して円を描く
         cu.fillCircle(
-            nowTime,
-            window.innerHeight / 2,
-            10,
+            nowTime / 5, //x座標
+            // window.innerHeight / 2,
+            nowTime / 10, //y座標
+            100,
             'rgba(255, 0, 255, 0.8)'
         );
 
