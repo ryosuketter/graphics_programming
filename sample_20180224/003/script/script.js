@@ -7,6 +7,7 @@
         cu = new CanvasUtil(document.getElementById('canvas'));
         cu.matchSize();
         cu.clear();
+        
         cu.fillRect(
             50,
             100,
