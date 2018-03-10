@@ -30,19 +30,24 @@
         cu.fillCircle(centerX, centerY, CIRCLE_RADIUS, CIRCLE_CENTER_COLOR);
 
         // 経過時間を % 演算し、度数として利用する
+        // Math.floor 小数点以下切り捨て
+        // 徐算の剰余を求めている（360で割ったあまり）
         let degrees = Math.floor(nowTime) % 360;
 
         // 度数をラジアンに変換する
         let radians = degrees * Math.PI / 180;
 
         // 変換したラジアンを用いてサインとコサインを求める
-        // ※ 100 倍しているのはどうしてだろう？
+        // ※ 100 倍しているのはどうしてだろう？ 実行するとわかる
+        // 円運動をわかりやすくしている
+        // サインコサインの結果は -1.0〜1.0の範囲を超えない
         let s = Math.sin(radians) * 100;
         let c = Math.cos(radians) * 100;
 
         // サインとコサインから得た値を中心座標に加え、円を描画
-        let x = centerX + c;
-        let y = centerY + s;
+        // サインとコサインをxとyどっちを足しているかに注目
+        let x = centerX + c; //コサインがxに相当
+        let y = centerY + s; //サインがyに相当
         cu.fillCircle(x, y, CIRCLE_RADIUS, CIRCLE_COLOR);
 
         gui.text({radian: radians, sin: s / 100, cos: c / 100});
