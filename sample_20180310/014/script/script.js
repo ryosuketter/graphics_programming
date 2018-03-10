@@ -7,7 +7,7 @@
     let vec;
     let balls;
 
-    const CIRCLE_COUNT = 100;
+    const CIRCLE_COUNT = 10;
     const CIRCLE_RADIUS = 20;
     const CIRCLE_MIN_SPEED = 5;
     const CIRCLE_ADD_SPEED = 10;

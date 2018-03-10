@@ -28,6 +28,16 @@
             let normal = Vector.calcNormal(x, y);
 
             // 正規化した向きをパラメータに持つ Ball インスタンスを生成する
+            // 配列に含まれるボールに対して処理する
+            // Array.mapは、各要素に対して、個別に関数を実行する
+            // let arr = [0,1,2];
+            // arr.map((value,index))=> {
+            //  console.log(value,index);
+            // });
+            // 'a', 0
+            // 'b', 1
+            // 'c', 2
+            // for文で実行することも可
             balls.push(new Ball(
                 window.innerWidth / 2,
                 window.innerHeight / 2,
