@@ -22,7 +22,7 @@
 
         startTime = Date.now();
 
-        // 波線の開始横位置を設定
+        // 波線の開始横位置を設定（青い点）
         globalX = 150;
         cu.clear();
         render();
@@ -57,6 +57,7 @@
 
         // 水平方向に等速移動する円を描く
         cu.fillCircle(globalX, y, CIRCLE_RADIUS, LINE_COLOR);
+        // コサインの結果のあたいの上下が可視化
         // cu.fillCircle(globalX, y2, CIRCLE_RADIUS, LINE_COLOR2);
 
         gui.text({radian: radians, sin: s / 100, cos: c / 100});

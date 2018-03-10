@@ -45,6 +45,7 @@
         cu.strokeLine(0, centerY, window.innerWidth, centerY, 2, LINE_CENTER_COLOR);
 
         // ジャンプ係数を度数と見立ててラジアンに変換
+        // 初期値は0だがスペースが押されると180
         let radians = jumpPower * Math.PI / 180;
 
         // 求めたラジアンからサインを求める
@@ -59,7 +60,10 @@
 
         // ジャンプ係数は常にデクリメント（－１）するが
         // 負の数値にならないように Math.max でクランプする
+        // Math.max は複数の引数のうち最大のものを返す
+        // Math.min は複数の引数のうち最小のものを返す
         jumpPower = Math.max(jumpPower - 1, 0);
+        // ジャンプパワーは毎フレーム1づつ減算されるけど、マイナスにはならない
 
         requestAnimationFrame(render);
     }

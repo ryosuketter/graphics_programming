@@ -20,8 +20,8 @@
         // マウスカーソルの初期位置は、最初は同じ位置にしておく
         let x = window.innerWidth / 2;
         let y = window.innerHeight / 2;
-        vec = new Vector(x, y);
-        mouse = new Vector(x, y);
+        vec = new Vector(x, y);  //ボールの位置を管理するためのベクトル
+        mouse = new Vector(x, y);  //マウスカーソルの位置用
 
         window.addEventListener('mousemove', (eve) => {
             mouse.setPosition(eve.clientX, eve.clientY);
@@ -44,11 +44,16 @@
         let distance = vec.getDistance(mousePos.x, mousePos.y);
 
         // 両者を結んだベクトルを正規化する
-        let normal = Vector.calcNormal(mousePos.x - position.x, mousePos.y - position.y);
+        let tx = mousePos.x - position.x;
+        let ty = mousePos.y - position.y;
+        // つまりここでも止まったベクトルは
+        // 長さが1で、純粋に方向を表している
+        let normal = Vector.calcNormal(tx, ty);
 
         // 正規化したベクトルは向きのみを表しているので、
         // そこに両者の距離に応じた値を掛けて移動させる
         // 移動する量は distance の 10% なので、要するに遠いほど早く大きく移動する
+        // ゆっくりついてくるに関する記述
         let x = position.x + normal.x * (distance * 0.1);
         let y = position.y + normal.y * (distance * 0.1);
         vec.setPosition(x, y);

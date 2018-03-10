@@ -63,6 +63,7 @@ class Vector {
     static calcNormal(x, y){
         let l = Vector.calcLength(x, y);
         if(l === 0){
+            // ゼロ除算しないように一応 if 文でチェック！003のp93
             return {x: 0, y: 0};
         }
         return {x: x / l, y: y / l};

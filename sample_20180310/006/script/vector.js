@@ -6,8 +6,9 @@
 class Vector {
     /**
      * @constructor
-     * @param {number} [x] - x 座標
-     * @param {number} [y] - y 座標
+     * コンストラクターがあるということは newでインスタンス化するやつ
+     * @param {number} [x] - x 座標（暗黙で終点の座標）
+     * @param {number} [y] - y 座標（暗黙で終点の座標）
      */
     constructor(x, y){
         this.x = 0;

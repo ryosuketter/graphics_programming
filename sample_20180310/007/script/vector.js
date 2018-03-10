@@ -35,6 +35,7 @@ class Vector {
     /**
      * 自身の座標をベクトルと見立てたときの長さを返す
      * @return {number} ベクトルの長さ（大きさ）
+     * 平方根を求めてる
      */
     getLength(){
         return Math.sqrt(this.x * this.x + this.y * this.y);

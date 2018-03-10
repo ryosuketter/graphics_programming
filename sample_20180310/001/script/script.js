@@ -32,7 +32,8 @@
         // 経過時間を % 演算し、度数として利用する
         // Math.floor 小数点以下切り捨て
         // 徐算の剰余を求めている（360で割ったあまり）
-        let degrees = Math.floor(nowTime) % 360;
+        // 時間の進み方をゆっくりにするため、割ったとき小数点が出ないために Math.floorしてる
+        let degrees = Math.floor(nowTime / 5) % 360;
 
         // 度数をラジアンに変換する
         let radians = degrees * Math.PI / 180;
