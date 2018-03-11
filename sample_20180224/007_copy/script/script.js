@@ -1,13 +1,10 @@
-
 (() => {
     let cu;
     let gui;
     let startTime;
     let nowTime;
 
-    // const を使ってパラメータを定数化する
-    // こうすることで一箇所を修正するだけで全体に変更を適用できるようになる
-    const CIRCLE_RADIUS = 100;                      // 円の半径
+    const CIRCLE_RADIUS = 100; // 円の半径
     const CIRCLE_COLOR = 'rgba(255, 0, 255, 0.8)'; // 円の塗り色
 
     window.addEventListener('load', () => {
@@ -18,46 +15,39 @@
 
         startTime = Date.now();
         render();
-    }, false);
+    },  false);
 
     function render(){
         nowTime = Date.now() - startTime;
         cu.clear();
 
-        // % 演算子を使って除算の剰余を求めることができる
-        // 経過時間をウィンドウ幅＋円の半径２個で除算し、その剰余を求める
-        // ※ なぜ円の半径２個を足しているのだろう？
         let x = nowTime % (window.innerWidth + CIRCLE_RADIUS * 2);
 
-        // X 座標から円の半径を引く
         x = x - CIRCLE_RADIUS;
 
         let y = window.innerHeight / 2;
 
         cu.fillCircle(x, y, CIRCLE_RADIUS, CIRCLE_COLOR);
 
-        gui.text({width: window.innerWidth, x: x});
+        // gui.text({ width: window.innerWidth, x: x });
 
         requestAnimationFrame(render);
     }
 
-    /**
-     * canvas 2d context を操作するクラス
-     * @class
-     */
+
     class CanvasUtil {
         /**
          * @constructor
          * @param {HTMLCanvasElement} canvas - このインスタンスに紐付ける canvas
          */
-        constructor(canvas){
+        constructor(canvas) {
             this.canvas = canvas;
             this.ctx = this.canvas.getContext('2d');
         }
         /**
          * canvas 全体をクリアする
          */
-        clear(){
+        clear() {
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         }
         /**
@@ -69,16 +59,16 @@
          * @param {string} [font] - フォントの指定（CSS Style）
          * @param {string} [color] - 塗りつぶす色（CSS Style）
          */
-        fillText(text, x, y, maxWidth, font, color){
-            if(font != null){
+        fillText(text, x, y, maxWidth, font, color) {
+            if (font != null) {
                 this.ctx.font = font;
             }
-            if(color != null){
+            if (color != null) {
                 this.ctx.fillStyle = color;
             }
-            if(maxWidth != null){
+            if (maxWidth != null) {
                 this.ctx.fillText(text, x, y, maxWidth);
-            }else{
+            } else {
                 this.ctx.fillText(text, x, y);
             }
         }
@@ -91,8 +81,8 @@
          * @param {number} [lineWidth=1] - ラインの幅
          * @param {string} [color] - ラインの色（CSS Style）
          */
-        strokeLine(x0, y0, x1, y1, lineWidth = 1, color){
-            if(color != null){
+        strokeLine(x0, y0, x1, y1, lineWidth = 1, color) {
+            if (color != null) {
                 this.ctx.strokeStyle = color;
             }
             this.ctx.beginPath();
@@ -109,8 +99,8 @@
          * @param {number} rad - 円の半径
          * @param {string} [color] - 塗りつぶす色（CSS Style）
          */
-        fillCircle(x, y, rad, color){
-            if(color != null){
+        fillCircle(x, y, rad, color) {
+            if (color != null) {
                 this.ctx.fillStyle = color;
             }
             this.ctx.beginPath();
@@ -126,8 +116,8 @@
          * @param {number} h - 矩形の高さ
          * @param {string} [color] - 塗りつぶす色（CSS Style）
          */
-        fillRect(x, y, w, h, color){
-            if(color != null){
+        fillRect(x, y, w, h, color) {
+            if (color != null) {
                 this.ctx.fillStyle = color;
             }
             this.ctx.fillRect(x, y, w, h);
@@ -135,9 +125,10 @@
         /**
          * canvas の大きさをウィンドウサイズに揃える
          */
-        matchSize(){
+        matchSize() {
             this.canvas.width = window.innerWidth;
             this.canvas.height = window.innerHeight;
         }
     }
+
 })();
