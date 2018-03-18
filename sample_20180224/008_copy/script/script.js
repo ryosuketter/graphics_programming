@@ -1,4 +1,3 @@
-
 (() => {
     let cu;
     let gui;
@@ -8,7 +7,7 @@
     const CIRCLE_RADIUS = 10;
     const CIRCLE_COLOR = 'rgba(255, 0, 255, 0.8)';
 
-    window.addEventListener('load', () => {
+    window.addEventListener('load',()=> {
         gui = new Gui();
         cu = new CanvasUtil(document.getElementById('canvas'));
         cu.matchSize();
@@ -16,46 +15,32 @@
 
         startTime = Date.now();
         render();
+
     }, false);
 
     function render() {
         nowTime = Date.now() - startTime;
         cu.clear();
 
-        // ウィンドウ幅と円の半径２個分の大きさ
         let w = window.innerWidth + CIRCLE_RADIUS * 2;
 
-        // 上記で求めた幅で除算した剰余を、さらに同じ幅で割って正規化する
-        // ※ 正規化 => 0.0 ～ 1.0 など、単位をわかりやすくする計算
         let x = nowTime % w / w;
 
-        // 正規化した X 要素を使ってイージングを行い、w を掛けてもとのスケールに戻す
         x = easeInCubic(x) * w;
-        // x = easeOutCubic(x) * w;
 
         let y = window.innerHeight / 2;
 
-        cu.fillCircle(x, y, CIRCLE_RADIUS, CIRCLE_COLOR);
+        cu.fillCircle(x,y, CIRCLE_RADIUS, CIRCLE_COLOR);
 
         gui.text({ width: window.innerWidth, x: x });
 
         requestAnimationFrame(render);
     }
 
-    // in を ease する
     function easeInCubic(t) {
         return t * t * t;
     }
 
-    // out を ease する
-    function easeOutCubic(t) {
-        return (--t) * t * t + 1;
-    }
-
-    /**
-     * canvas 2d context を操作するクラス
-     * @class
-     */
     class CanvasUtil {
         /**
          * @constructor
@@ -151,4 +136,7 @@
             this.canvas.height = window.innerHeight;
         }
     }
+
+
+
 })();
